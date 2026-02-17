@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { ButtonLink } from '../components/elements/button';
+import { Container } from '../components/elements/container';
+import { Eyebrow } from '../components/elements/eyebrow';
+import { Heading } from '../components/elements/heading';
+import { Main } from '../components/elements/main';
+import { Text } from '../components/elements/text';
+import { Wallpaper } from '../components/elements/wallpaper';
+import { Section } from '../components/elements/section';
+import { Feature, FeaturesThreeColumn } from '../components/sections/features-three-column';
 
 const EbookSlider = () => {
   const images = [
@@ -34,9 +43,8 @@ const EbookSlider = () => {
   };
 
   return (
-    <div className="relative group">
-      {/* Main Image Container */}
-      <div className="aspect-[3/4] rounded-2xl bg-white flex items-center justify-center overflow-hidden border border-slate-200 shadow-inner relative">
+    <div className="relative group w-full">
+      <div className="aspect-[3/4] w-full rounded-2xl bg-white flex items-center justify-center overflow-hidden border border-slate-200 shadow-inner relative">
         {images.map((img, index) => (
           <div
             key={index}
@@ -44,16 +52,11 @@ const EbookSlider = () => {
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img
-              src={img}
-              alt={`Ebook oldal ${index + 1}`}
-              className="w-full h-full object-contain p-2"
-            />
+            <img src={img} alt={`Ebook oldal ${index + 1}`} className="w-full h-full object-contain p-2" />
           </div>
         ))}
       </div>
 
-      {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
         className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-800 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-20 border-none cursor-pointer"
@@ -73,14 +76,13 @@ const EbookSlider = () => {
         </svg>
       </button>
 
-      {/* Pagination Dots */}
       <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all border-none cursor-pointer ${
-              index === currentIndex ? 'bg-[#0a7ac3] w-6' : 'bg-slate-300 hover:bg-slate-400'
+              index === currentIndex ? 'bg-[#53A8C7] w-6' : 'bg-slate-300 hover:bg-slate-400'
             }`}
             aria-label={`Ugrás a(z) ${index + 1}. oldalra`}
           />
@@ -91,102 +93,251 @@ const EbookSlider = () => {
 };
 
 export default function EbookPage() {
+  const juditImage = useBaseUrl('/img/judit.jpeg');
+  const zsuzsaImage = useBaseUrl('/img/zsuzsa.jpg');
+
   return (
     <Layout title="E-book" description="Pénzmosás elleni törvény TUDÁSTÁR eBook">
-      <main className="bg-white min-h-screen py-10 md:py-14 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
-            
-            {/* Left Content Column */}
-            <div className="w-full lg:w-3/5 space-y-6">
-              {/* Category Label with Line */}
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-[2px] bg-[#53A8C7]"></div>
-                <span className="text-sm font-bold tracking-widest uppercase text-[#53A8C7]">
-                  EBOOK
-                </span>
-              </div>
-
-              {/* Main Title */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
-                Pénzmosás elleni törvény <br />
-                <span className="text-[#0a7ac3]">TUDÁSTÁR</span> eBook?
-              </h1>
-
-              {/* Description Texts */}
-              <div className="space-y-0 text-slate-600 text-base md:text-base leading-relaxed max-w-2xl">
-                <p>
-                  Tapasztalataink szerint a Pénzmosási törvény (Pmt.) értelmezése és gyakorlati alkalmazása sokak számára kihívást jelent. Jelenleg <span className="font-bold text-slate-800">kevés az átfogó, hiteles és érthető oktatóanyag</span>, ezért sokan nem tudják, honnan érdemes tájékozódni a jogszabályi kötelezettségekről, egyáltalán hogyan kezdjenek neki a megfelelésnek.
-                </p>
-                <p>
-                  E hiány pótlására írtunk egy könyvet az összes, Pmt.-vel kapcsolatos kötelezettségről - gyakorlat-orientáltan, érthetően, szakértőtől - 106 oldalon.
-                </p>
-              </div>
-
-              {/* Feature List with Checkmarks */}
-              <ul className="space-y-2">
-                {[
-                  {
-                    title: "Az összes teendő",
-                    desc: "A szolgáltatás megkezdésétől kezdve az ügyfélátvilágításon át a monitoring feladatokig, részletesen, példákkal, speciális esetekkel."
-                  },
-                  {
-                    title: "Nyomtatványok, kitöltési útmutatók",
-                    desc: "Az összes szükséges nyomtatvány elérhetősége, magyarázattal, kitöltési útmutatóval."
-                  },
-                  {
-                    title: "NAV ellenőrzési gyakorlat",
-                    desc: "Gyakorlati példák, mire kell figyelni, mit kérnek, ellenőrzési statisztikák és számos fontos információ."
-                  },
-                  {
-                    title: "Ellenőrizendő listák",
-                    desc: "A kapcsolódó listák elérhetősége: kiemelt kockázatú és offshore országok, szankciós listák, stb."
-                  }
-                ].map((item, idx) => (
-                  <li key={idx} className="flex gap-3 items-start">
-                    <div className="flex-shrink-0 w-6 h-6 mt-1 text-green-500">
-                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-base md:text-lg font-bold text-slate-800 mb-1">{item.title}</h3>
-                      <p className="text-sm md:text-base text-slate-600 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA Button */}
-              <div className="pt-2">
-                <button 
-                  className="w-full md:w-auto bg-[#53A8C7] hover:bg-[#0a7ac3] text-white font-bold px-10 py-4 rounded-2xl text-lg shadow-xl shadow-blue-100 transition-all hover:scale-105 active:scale-95 border-none cursor-pointer"
-                >
-                  Kérem a könyvet
-                </button>
-              </div>
-            </div>
-
-            {/* Right Visual Column */}
-            <div className="w-full lg:w-2/5 relative">
-              <div className="relative z-10 bg-gradient-to-br from-blue-50 to-white p-5 rounded-[2.5rem] shadow-2xl border border-blue-100 mb-12 lg:mb-0">
-                <EbookSlider />
-
-                {/* Decorative dots pattern (from screenshot) */}
-                <div className="absolute -top-6 -left-6 w-24 h-24 grid grid-cols-5 gap-2 opacity-20 pointer-events-none">
-                  {[...Array(25)].map((_, i) => (
-                    <div key={i} className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                  ))}
+      <Main className="bg-white min-h-screen">
+        <Wallpaper color="blue" className="text-white">
+          <header className="overflow-hidden lg:px-5">
+            <Container className="px-0">
+              <div className="grid grid-cols-1 grid-rows-[auto_1fr] gap-y-12 pt-12 pb-16 md:gap-y-16 md:pt-16 md:pb-20 lg:grid-cols-12 lg:gap-y-20 lg:pt-20 lg:pb-36 xl:py-32">
+            <div className="relative flex items-end lg:col-span-5 lg:row-span-2">
+              <div className="absolute -top-20 right-1/2 -bottom-12 left-0 z-10 rounded-br-[3rem] bg-[#2b6f8f] md:bottom-8 lg:-inset-y-32 lg:right-full lg:left-[-100vw] lg:-mr-40" />
+              <div className="relative z-10 mx-auto w-64 md:w-80 lg:w-96">
+                <div className="rounded-2xl bg-white p-4 shadow-2xl">
+                  <EbookSlider />
                 </div>
               </div>
-
-              {/* Background Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-400/10 blur-[100px] rounded-full -z-10"></div>
             </div>
 
+            <div className="relative px-4 sm:px-6 lg:col-span-7 lg:pr-0 lg:pb-14 lg:pl-16 xl:pl-20">
+              <div className="hidden lg:absolute lg:-top-32 lg:right-[-100vw] lg:bottom-0 lg:left-[-100vw] lg:block lg:bg-transparent" />
+              <figure className="relative mx-auto max-w-md text-center lg:mx-0 lg:text-left">
+                <div className="flex justify-center text-[#f5c542] lg:justify-start">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, index) => (
+                      <svg key={index} aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5 fill-current">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <blockquote className="mt-2">
+                  <p className="text-xl font-semibold text-white">
+                    “Végre egy anyag, ami érthetően és gyakorlati példákkal vezet végig a megfelelésen.”
+                  </p>
+                </blockquote>
+                <figcaption className="mt-2 text-sm text-white/70">
+                  <strong className="font-semibold text-white before:content-['—_']">Kovács Eszter</strong>, Compliance vezető
+                </figcaption>
+              </figure>
+            </div>
+
+            <div className="bg-transparent pt-16 lg:col-span-7 lg:pt-0 lg:pl-16 xl:pl-20">
+              <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
+                <Eyebrow className="text-white/70">E-book</Eyebrow>
+                <Heading color="light" className="mt-3">
+                  Pénzmosás elleni törvény <span className="text-white">TUDÁSTÁR</span>
+                </Heading>
+                <Text size="lg" color="light" className="mt-6">
+                  A legfontosabb Pmt. kötelezettségek egy helyen: érthetően, példákkal, 106 oldalon.
+                </Text>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <ButtonLink size="lg" color="light" href="#pricing">
+                    Kérem a könyvet
+                  </ButtonLink>
+                  <ButtonLink size="lg" color="light" className="bg-white/20 text-white hover:bg-white/30" href="#table-of-contents">
+                    Tartalomjegyzék
+                  </ButtonLink>
+                </div>
+              </div>
+            </div>
+          </div>
+            </Container>
+          </header>
+        </Wallpaper>
+
+        <div className="sticky top-0 z-40">
+          <div className="sm:hidden">
+            <div className="relative flex items-center px-4 py-3 bg-white/95 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur-sm">
+              <span aria-hidden="true" className="font-mono text-sm text-[#53A8C7]">01</span>
+              <span className="ml-4 text-base font-medium text-mist-950">Tartalom</span>
+              <a
+                className="ml-auto inline-flex items-center justify-center rounded-full bg-[#53A8C7] text-white px-4 py-2 text-sm font-semibold"
+                href="#pricing"
+              >
+                Kérem a könyvet
+              </a>
+            </div>
+            <div className="absolute inset-x-0 bottom-full z-10 h-4 bg-white" />
+          </div>
+          <div className="hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:border-mist-200 sm:bg-white/95 sm:[@supports(backdrop-filter:blur(0))]:bg-white/80 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur-sm">
+            <ol
+              role="list"
+              className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-mist-950 [counter-reset:section]"
+            >
+              {[
+                { href: '#table-of-contents', label: 'Tartalomjegyzék' },
+                { href: '#screencasts', label: 'Példák' },
+                { href: '#resources', label: 'Eszközök' },
+                { href: '#pricing', label: 'Megrendelés' },
+                { href: '#author', label: 'Szerzők' },
+              ].map((item) => (
+                <li key={item.href} className="flex [counter-increment:section]">
+                  <a
+                    href={item.href}
+                    className="flex w-full flex-col items-center justify-center border-b-2 border-transparent before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] before:text-mist-500 hover:bg-[#53A8C7]/10 hover:before:text-mist-950"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
-      </main>
+
+        <FeaturesThreeColumn
+          id="table-of-contents"
+          headline="Mit kapsz az eBookban?"
+          subheadline={
+            <>
+              Tapasztalataink szerint kevés az átfogó, hiteles és érthető oktatóanyag. Ez az eBook a teljes megfelelési
+              folyamatot lefedi, lépésről lépésre.
+            </>
+          }
+          features={
+            <>
+              <Feature
+                headline="Az összes teendő egy helyen"
+                subheadline={<p>A szolgáltatás megkezdésétől a monitoring feladatokig, példákkal és speciális esetekkel.</p>}
+              />
+              <Feature
+                headline="Nyomtatványok és kitöltési útmutatók"
+                subheadline={<p>Minden szükséges nyomtatvány elérhetősége, magyarázattal és gyakorlati segítséggel.</p>}
+              />
+              <Feature
+                headline="NAV ellenőrzési gyakorlat"
+                subheadline={<p>Mire figyelj, mit kérnek, ellenőrzési statisztikák és gyakori hibák.</p>}
+              />
+            </>
+          }
+        />
+
+        <Section
+          id="screencasts"
+          className="bg-white"
+          headline="Példák és gyakorlati nézetek"
+          subheadline="Valós működési helyzetek és mintafolyamatok, amelyek segítenek gyorsabban dönteni."
+        >
+          <div className="grid gap-6 md:grid-cols-3">
+            {['Ügyfél-átvilágítás folyamat', 'Kockázatértékelési minta', 'Monitoring ellenőrzési pontok'].map((item) => (
+              <div key={item} className="rounded-2xl p-6">
+                <p className="text-base font-semibold text-mist-950">{item}</p>
+                <p className="mt-2 text-sm text-mist-600">Letisztított, használható checklist és példák.</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section
+          id="resources"
+          headline="Eszközök és sablonok"
+          subheadline="Egyszerűen adaptálható dokumentumok, hogy gyorsabban összeálljon a megfelelési csomag."
+        >
+          <div className="grid gap-6 md:grid-cols-2">
+            {['Mintanyilatkozatok', 'Kockázati mátrix', 'Belépési checklist', 'Belső szabályzat vázlat'].map((item) => (
+              <div key={item} className="flex items-center gap-4 rounded-2xl bg-mist-50 p-5">
+                <div className="h-10 w-10 rounded-xl bg-[#53A8C7]/15 text-[#53A8C7] flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-base font-medium text-mist-950">{item}</span>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Wallpaper color="blue" className="text-white">
+          <section id="pricing" className="py-16">
+            <div className="mx-auto max-w-6xl px-6 lg:px-8 text-white">
+            <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
+              <div>
+                <h2 className="text-3xl font-semibold">Készen állsz, hogy rend legyen?</h2>
+                <p className="mt-3 text-lg text-white/70">
+                  A Pmt. megfelelés nem kell, hogy stresszes legyen. A könyv lépésről lépésre vezet végig a kötelező
+                  folyamatokon.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white/0 p-6">
+                <div className="text-sm uppercase tracking-[0.2em] text-white/60">E-book csomag</div>
+                <div className="mt-3 text-4xl font-bold">36 000 Ft</div>
+                <p className="mt-2 text-sm text-white/60">Azonnali hozzáféréssel, PDF formátumban.</p>
+                <a
+                  className="mt-6 inline-flex w-full justify-center rounded-xl bg-white px-6 py-3 text-base font-semibold text-mist-950 hover:bg-mist-100"
+                  href="#"
+                >
+                  Kérem a könyvet
+                </a>
+              </div>
+            </div>
+            </div>
+          </section>
+        </Wallpaper>
+
+        <Section
+          id="author"
+          headline="Szerzők"
+          subheadline="A tudásanyagot tapasztalt AML és compliance szakértők állították össze, akik napi szinten dolgoznak a megfelelési feladatokkal."
+        >
+          <div className="grid gap-6 md:grid-cols-2">
+            {[
+              {
+                name: 'Judit',
+                role: 'Szabályozási szakértő',
+                desc: 'A jogszabályi megfelelés gyakorlati oldalát képviseli, konkrét lépésekkel és példákkal.',
+                image: juditImage,
+              },
+              {
+                name: 'Zsuzsa',
+                role: 'Közösségi mentor',
+                desc: 'Folyamat- és működésfókuszú szemlélettel segít a bevezetésben.',
+                image: zsuzsaImage,
+              },
+            ].map((person) => (
+              <div key={person.name} className="flex gap-4 rounded-2xl border border-slate-200/70 bg-white p-6">
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className="h-16 w-16 flex-none rounded-full object-cover outline -outline-offset-1 outline-black/5"
+                />
+                <div>
+                  <h3 className="text-lg font-semibold text-mist-950">{person.name}</h3>
+                  <p className="text-sm font-semibold text-[#53A8C7]">{person.role}</p>
+                  <p className="mt-2 text-sm text-mist-600">{person.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-mist-200 bg-white/95 [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur-sm">
+          <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
+            <div>
+              <p className="text-sm font-semibold text-mist-950">Pmt. TUDÁSTÁR eBook</p>
+              <p className="text-xs text-mist-500">Azonnali hozzáférés PDF-ben.</p>
+            </div>
+            <a
+              className="inline-flex items-center justify-center rounded-full bg-[#53A8C7] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-[#53A8C7]/30 hover:bg-[#3f98b8]"
+              href="#pricing"
+            >
+              Kérem a könyvet
+            </a>
+          </div>
+        </div>
+      </Main>
     </Layout>
   );
 }

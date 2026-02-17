@@ -2,101 +2,117 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+import { ButtonLink } from '../components/elements/button';
+import { Container } from '../components/elements/container';
+import { Eyebrow } from '../components/elements/eyebrow';
+import { Heading } from '../components/elements/heading';
+import { Main } from '../components/elements/main';
+import { Text } from '../components/elements/text';
+import { Wallpaper } from '../components/elements/wallpaper';
+import { Section } from '../components/elements/section';
+import { Feature, FeaturesThreeColumn } from '../components/sections/features-three-column';
+
 export default function KozossegPage() {
   const juditImage = useBaseUrl('/img/judit.jpeg');
   const zsuzsaImage = useBaseUrl('/img/zsuzsa.jpg');
 
   return (
     <Layout title="Közösség" description="identiGO szakmai közösség és csapat">
-      <main className="bg-slate-50 min-h-screen">
-        <section className="relative overflow-hidden py-20 md:py-24 bg-slate-900 text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(83,168,199,0.3),transparent_35%),radial-gradient(circle_at_85%_10%,rgba(83,168,199,0.18),transparent_35%)]" />
-          <div className="relative z-10 container mx-auto px-4">
-            <div className="max-w-4xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-[2px] bg-[#53A8C7]" />
-                <span className="text-sm font-bold tracking-widest uppercase text-[#9ad6ea]">Szakmai közösség</span>
+      <Main>
+        <Wallpaper color="blue" className="text-white">
+          <section className="py-20 md:py-24">
+            <Container>
+              <div className="max-w-3xl">
+                <Eyebrow className="text-white/70">Szakmai közösség</Eyebrow>
+                <Heading color="light" className="mt-4">
+                  Csatlakozz az identiGO közösségéhez
+                </Heading>
+                <Text size="lg" color="light" className="mt-6 max-w-2xl">
+                  Gyakorlati AML és compliance tudásanyagok, valós esetek, heti tippek és szakmai beszélgetések egy
+                  támogató közegben.
+                </Text>
+                <div className="mt-8">
+                  <ButtonLink
+                    size="lg"
+                    color="light"
+                    href="https://forms.gle/example-identigo-facebook"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Facebook közösség jelentkezési űrlap
+                  </ButtonLink>
+                </div>
               </div>
-              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                Csatlakozz az identiGO közösségéhez
-              </h1>
-              <p className="text-lg md:text-xl text-slate-200 max-w-3xl leading-relaxed mb-10">
-                Gyakorlati AML és compliance tudásanyagok, valós esetek, heti tippek és szakmai beszélgetések egy
-                támogató közegben.
-              </p>
-              <a
-                className="inline-flex items-center justify-center rounded-xl px-7 py-4 font-bold text-white no-underline bg-[#53A8C7] hover:bg-[#3f98b8] transition-colors"
-                href="https://forms.gle/example-identigo-facebook"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Facebook közösség jelentkezési űrlap
-              </a>
-            </div>
-          </div>
-        </section>
+            </Container>
+          </section>
+        </Wallpaper>
 
-        <section className="py-14 md:py-16">
-          <div className="container mx-auto px-4">
-            <div className="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-10 shadow-xl shadow-slate-200/40">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Mit kapsz a közösségben?</h2>
-              <p className="text-slate-600 text-lg leading-relaxed max-w-3xl mb-8">
-                Rövid, használható útmutatókat, ellenőrzési fókuszokat és sablonokat, amiket be tudsz építeni a napi
-                működésbe. A cél: kevesebb bizonytalanság, tisztább folyamatok.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {[
-                  'Heti gyakorlati tippek AML témában',
-                  'Esettanulmányok valós működési helyzetekből',
-                  'Kérdezz-felelek szakértői támogatással',
-                ].map((item) => (
-                  <div key={item} className="rounded-xl bg-slate-50 border border-slate-200 px-4 py-4 text-slate-700 font-medium">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <FeaturesThreeColumn
+          headline="Mit kapsz a közösségben?"
+          subheadline={
+            <>
+              Rövid, használható útmutatókat, ellenőrzési fókuszokat és sablonokat, amiket be tudsz építeni a napi
+              működésbe. A cél: kevesebb bizonytalanság, tisztább folyamatok.
+            </>
+          }
+          features={
+            <>
+              <Feature
+                headline="Heti gyakorlati tippek AML témában"
+                subheadline={<p>Azonnal beépíthető ellenőrzési pontok és jogszabályi frissítések röviden.</p>}
+              />
+              <Feature
+                headline="Esettanulmányok valós működési helyzetekből"
+                subheadline={<p>Konkrét példákon keresztül mutatjuk be, hogyan lehet jól reagálni a rizikókra.</p>}
+              />
+              <Feature
+                headline="Kérdezz-felelek szakértői támogatással"
+                subheadline={<p>Gyors válaszok és közös gondolkodás, hogy ne egyedül kelljen dönteni.</p>}
+              />
+            </>
+          }
+        />
 
-        <section className="pb-10">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-[2px] bg-[#53A8C7]" />
-              <span className="text-sm font-bold tracking-widest uppercase text-[#53A8C7]">Judit és Zsuzsa</span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <article className="bg-white border border-slate-200 rounded-[1.75rem] p-7 shadow-lg shadow-slate-200/50">
-                <img
-                  src={juditImage}
-                  alt="Judit"
-                  className="w-full aspect-[4/3] object-cover rounded-2xl bg-slate-200 mb-6"
-                />
-                <h3 className="text-2xl font-extrabold text-slate-900 mb-2">Judit</h3>
-                <p className="text-sm font-bold uppercase tracking-wide text-[#53A8C7] mb-4">Szabályozási szakértő</p>
-                <p className="text-slate-600 leading-relaxed">
+        <Section
+          eyebrow="Judit és Zsuzsa"
+          headline="A közösség házigazdái"
+          subheadline="Ketten együtt hozzák a szabályozási és működési nézőpontot, hogy a megfelelés érthető és kezelhető legyen."
+        >
+          <ul role="list" className="divide-y divide-mist-200 dark:divide-white/10">
+            <li className="flex flex-col gap-10 py-12 first:pt-0 last:pb-0 sm:flex-row">
+              <img
+                src={juditImage}
+                alt="Judit"
+                className="aspect-4/5 w-52 flex-none rounded-2xl object-cover outline -outline-offset-1 outline-black/5 dark:outline-white/10"
+              />
+              <div className="max-w-xl flex-auto">
+                <h3 className="text-lg/8 font-semibold text-mist-950 dark:text-white">Judit</h3>
+                <p className="text-base/7 text-mist-700 dark:text-mist-400">Szabályozási szakértő</p>
+                <p className="mt-6 text-base/7 text-mist-700 dark:text-mist-400">
                   A közösségben a jogszabályi megfelelés gyakorlati oldalát képviseli. Olyan megközelítéseket ad, amelyek
                   a napi működésben is kivitelezhetők, nem csak elméletben.
                 </p>
-              </article>
+              </div>
+            </li>
 
-              <article className="bg-white border border-slate-200 rounded-[1.75rem] p-7 shadow-lg shadow-slate-200/50">
-                <img
-                  src={zsuzsaImage}
-                  alt="Zsuzsa"
-                  className="w-full aspect-[4/3] object-cover rounded-2xl bg-slate-200 mb-6"
-                />
-                <h3 className="text-2xl font-extrabold text-slate-900 mb-2">Zsuzsa</h3>
-                <p className="text-sm font-bold uppercase tracking-wide text-[#53A8C7] mb-4">Közösségi mentor</p>
-                <p className="text-slate-600 leading-relaxed">
+            <li className="flex flex-col gap-10 py-12 first:pt-0 last:pb-0 sm:flex-row">
+              <img
+                src={zsuzsaImage}
+                alt="Zsuzsa"
+                className="aspect-4/5 w-52 flex-none rounded-2xl object-cover outline -outline-offset-1 outline-black/5 dark:outline-white/10"
+              />
+              <div className="max-w-xl flex-auto">
+                <h3 className="text-lg/8 font-semibold text-mist-950 dark:text-white">Zsuzsa</h3>
+                <p className="text-base/7 text-mist-700 dark:text-mist-400">Közösségi mentor</p>
+                <p className="mt-6 text-base/7 text-mist-700 dark:text-mist-400">
                   Folyamat- és működésfókuszú szemlélettel segít rendet tenni a megfelelési feladatokban. Erőssége a
                   tiszta kommunikáció és a lépésről lépésre felépített bevezetés.
                 </p>
-              </article>
-            </div>
-          </div>
-        </section>
-      </main>
+              </div>
+            </li>
+          </ul>
+        </Section>
+      </Main>
     </Layout>
   );
 }
