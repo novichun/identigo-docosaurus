@@ -196,35 +196,3 @@
 .identigo-blog-banner--kozosseg {
   background: linear-gradient(120deg, #b15b1f, #7f3f13);
 }
-
-/* Docs right-side TOC style (desktop) */
-.theme-doc-toc-desktop .table-of-contents {
-  border-left: 1px solid #d3d8df;
-  padding-left: 1.15rem;
-  font-size: 1.06rem;
-  line-height: 1.75;
-}
-
-.theme-doc-toc-desktop .table-of-contents__link {
-  color: #4b5563;
-  font-weight: 400;
-  transition: color 0.16s ease;
-}
-
-.theme-doc-toc-desktop .table-of-contents__link:hover {
-  color: #1f2937;
-  text-decoration: none;
-}
-
-.theme-doc-toc-desktop .table-of-contents__link--active {
-  color: #3b82f6;
-  font-weight: 500;
-}
-
-.theme-doc-toc-desktop ul {
-  margin-top: 0.35rem;
-}
-
-.theme-doc-toc-desktop li {
-  margin: 0.2rem 0;
-}
