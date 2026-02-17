@@ -1,22 +1,22 @@
 identigo-team:
   name: identiGO csapat
   title: Szerkesztőség
-  image_url: https://identigo.hu/favicon.ico
+  image_url: https://identigo.hu/img/rendszerbemutato.png
 
 judit:
   name: Osváth Judit
   title: AML szakértő
-  image_url: https://identigo.hu/favicon.ico
+  image_url: /img/judit.jpeg
 
 Judit:
   name: Osváth Judit
   title: AML szakértő
-  image_url: https://identigo.hu/favicon.ico
+  image_url: /img/judit.jpeg
 
 zsuzsa:
   name: Zsuzsa
   title: Partner mentor
-  image_url: https://identigo.hu/favicon.ico
+  image_url: /img/zsuzsa.jpg
 
 CrespoZs:
   name: Crespo Zsuzsanna
@@ -26,7 +26,7 @@ CrespoZs:
 Feher.Regina:
   name: Fehér Regina
   title: Szerkesztő
-  image_url: https://identigo.hu/favicon.ico
+  image_url: https://identigo.hu/img/rendszerbemutato.png
 
 7451:
   name: Szerkesztő

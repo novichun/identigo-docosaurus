@@ -3,7 +3,7 @@ sidebar_position: 0
 title: 'Tartalomjegyzék'
 tags: [sugo]
 question: 'Tartalomjegyzék'
-slug: /tartalomjegyzek
+slug: /
 ---
 
 # Tartalomjegyzék

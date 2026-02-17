@@ -15,7 +15,7 @@ export default function Navbar() {
     kozosseg: useBaseUrl('/kozosseg'),
     ebook: useBaseUrl('/ebook'),
     blog: useBaseUrl('/blog'),
-    docs: useBaseUrl('/identigo-docosaurus/docs'),
+    docs: useBaseUrl('/docs'),
     akademia: useBaseUrl('/akademia'),
     forum: 'https://forum.identigo.hu',
   };
@@ -38,6 +38,8 @@ export default function Navbar() {
           <div className="group relative flex flex-col rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-white/5">
             <a
               href={routes.forum}
+              target="_blank"
+              rel="noreferrer"
               className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-primary dark:text-white dark:hover:text-primary"
             >
               <svg
@@ -224,7 +226,7 @@ export default function Navbar() {
       <NavbarWithLogoActionsAndLeftAlignedLinks
         id="navbar"
         logo={
-          <NavbarLogo href="/identigo-docosaurus/">
+          <NavbarLogo href={useBaseUrl('/')}>
             <img
               src="https://identigo.hu/img/logo.png"
               alt="identiGO"
@@ -243,8 +245,8 @@ export default function Navbar() {
         }
         links={
           <>
-            <NavbarLink href="/identigo-docosaurus/#funkciok">Funkciók</NavbarLink>
-            <NavbarLink href="Arak">Árak</NavbarLink>
+            <NavbarLink href={useBaseUrl('/#funkciok')}>Funkciók</NavbarLink>
+            <NavbarLink href={useBaseUrl('/arak')}>Árak</NavbarLink>
             <div className="relative">
               <button
                 popovertarget="desktop-menu-knowledge"

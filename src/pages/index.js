@@ -342,7 +342,7 @@ export default function Home() {
         />
 
         {/* FAQs */}
-        <FAQsTwoColumnAccordion id="faqs" headline="Questions & Answers">
+        <FAQsTwoColumnAccordion id="faqs" headline="Gyakori kérdések">
           <Faq
             id="faq-1"
             question="Kiknek ajánljuk az identiGO-t?"
