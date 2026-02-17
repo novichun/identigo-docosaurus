@@ -249,7 +249,7 @@ export default function Navbar() {
             <NavbarLink href={useBaseUrl('/arak')}>Árak</NavbarLink>
             <div className="relative">
               <button
-                popovertarget="desktop-menu-knowledge"
+                popoverTarget="desktop-menu-knowledge"
                 className="inline-flex items-center gap-x-1 text-sm/6 font-medium text-gray-900 dark:text-white"
               >
                 <span>Tudásbázis</span>

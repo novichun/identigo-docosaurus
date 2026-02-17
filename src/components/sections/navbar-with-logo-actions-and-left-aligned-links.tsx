@@ -73,7 +73,7 @@ export function NavbarWithLogoActionsAndLeftAlignedLinks({
 } & ComponentProps<'header'>) {
   return (
     <header
-      className={clsx('navbar sticky top-0 z-10 bg-mist-100 dark:bg-mist-950', className)}
+      className={clsx('sticky top-0 z-10 bg-mist-100 dark:bg-mist-950', className)}
       {...props}
     >
       <style>{`:root { --scroll-padding-top: 5.25rem }`}</style>

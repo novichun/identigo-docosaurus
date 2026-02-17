@@ -76,7 +76,7 @@ export default function Home() {
           demo={
             <>
               <div className="aspect-video w-full overflow-hidden rounded-2xl bg-white/75 shadow-lg dark:bg-black/75">
-                <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
+                <div className="relative aspect-video w-full h-full overflow-hidden rounded-xl bg-black">
                   {/* Banner */}
                   <img
                     src="https://identigo.hu/img/app_screens/1.png"
@@ -120,7 +120,7 @@ export default function Home() {
                   <iframe
                     id="demo-video-iframe"
                     className="h-full w-full"
-                    src=""
+                    src={undefined}
                     title="identiGO rendszerbemutató"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -196,7 +196,7 @@ export default function Home() {
                 }
                 headline="Csökkenti az adminisztrációs terheket"
                 subheadline={<p>Automatikus adatkitöltés és szűrések — kézi beavatkozás nélkül.</p>}
-                div />
+              />
               <FeatureThreeColumnWithDemos
                 demo={
                   <Screenshot wallpaper="purple" placement="top-left">
