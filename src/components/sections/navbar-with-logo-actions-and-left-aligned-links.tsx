@@ -72,7 +72,10 @@ export function NavbarWithLogoActionsAndLeftAlignedLinks({
   actions: ReactNode
 } & ComponentProps<'header'>) {
   return (
-    <header className={clsx('sticky top-0 z-10 bg-mist-100 dark:bg-mist-950', className)} {...props}>
+    <header
+      className={clsx('navbar sticky top-0 z-10 bg-mist-100 dark:bg-mist-950', className)}
+      {...props}
+    >
       <style>{`:root { --scroll-padding-top: 5.25rem }`}</style>
       <nav>
         <div className="mx-auto flex h-(--scroll-padding-top) max-w-7xl items-center gap-4 px-6 lg:px-10">
