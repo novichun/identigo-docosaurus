@@ -68,55 +68,66 @@ export default function RendPage() {
           </div>
         </section>
 
-        {/* Features/Steps Section - NICER AND BRIGHTER DESIGN */}
-        <section className="py-24 relative overflow-hidden bg-white ">
-          {/* Decorative background elements */}
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
-          <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
+        {/* Process Section */}
+        <section className="py-24 relative overflow-hidden bg-white">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(83,168,199,0.12),transparent_35%),radial-gradient(circle_at_90%_90%,rgba(83,168,199,0.08),transparent_35%)]"></div>
 
           <div className="relative z-10 container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-                Hogyan rakok rendet az identiGO-val?
+            <div className="text-center mb-14">
+              <div className="inline-flex items-center gap-3 mb-5">
+                <div className="w-8 h-[2px] bg-[#53A8C7]"></div>
+                <span className="text-sm font-bold tracking-widest uppercase text-[#53A8C7]">Folyamat</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5">
+                Így lesz rend a megfelelésben
               </h2>
-              <div className="w-24 h-1.5 bg-[#0a7ac3] mx-auto rounded-full mb-8"></div>
-              <p className="text-slate-600 text-xl max-w-2xl mx-auto leading-relaxed">
-                Egyszerű, átlátható és hatékony folyamat, amellyel búcsút inthet a papírmunkának és az átláthatatlan táblázatoknak.
+              <p className="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                Nem újabb adminisztrációt adunk, hanem egy működő rendszert: egyértelmű felelősségekkel,
+                átlátható folyamatokkal és ellenőrzésbiztos dokumentációval.
               </p>
             </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-                <div  className="group bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-blue-100/50  transition-all hover:translate-y-[-12px] hover:border-blue-200">
-                  <div className="w-20 h-20 bg-gradient-to-br bg-[#53A8C7]  text-white rounded-3xl flex items-center justify-center mb-8 text-3xl font-black shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform">
-                    1
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  step: '01',
+                  title: 'Helyzetkép 60 percben',
+                  desc: 'Átnézzük a jelenlegi működést, azonosítjuk a kockázatos pontokat és a legnagyobb időveszteségeket.',
+                },
+                {
+                  step: '02',
+                  title: 'Prioritási terv',
+                  desc: 'Egy tiszta, ütemezett tervet készítünk: mi az azonnali teendő, mi automatizálható, és mi halasztható.',
+                },
+                {
+                  step: '03',
+                  title: 'Bevezetés és finomhangolás',
+                  desc: 'A napi működésbe illesztjük a rendszert, majd valós használat alapján finomítjuk a folyamatokat.',
+                },
+              ].map((item) => (
+                <article
+                  key={item.step}
+                  className="group bg-white border border-slate-200 rounded-3xl p-8 shadow-lg shadow-slate-200/60 transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-3xl font-black tracking-tight text-slate-900">{item.step}</span>
+                    <span className="w-10 h-[3px] rounded-full bg-[#53A8C7]"></span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-5 text-slate-900">Állapotfelmérés</h3>
-                  <p className="text-slate-600 leading-relaxed text-lg">
-                    Rövid audit a jelenlegi folyamatokról. Megnézzük, hol vannak a szűk keresztmetszetek és a hibalehetőségek a napi adminisztráció során.
-                  </p>
-                </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                </article>
+              ))}
+            </div>
 
-                <div className="group bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-blue-100/50 border border-blue-50 transition-all hover:translate-y-[-12px] hover:border-blue-200">
-                  <div className="w-20 h-20 bg-gradient-to-br bg-[#53A8C7] text-white rounded-3xl flex items-center justify-center mb-8 text-3xl font-black shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform">
-                    2
-                  </div>
-                  <h3 className="text-2xl font-bold mb-5 text-slate-900">Prioritások</h3>
-                  <p className="text-slate-600 leading-relaxed text-lg">
-                    Mit kell azonnal rendezni és mi várhat. Kijelöljük a legfontosabb lépéseket a gyors siker és a jogszabályi megfelelés érdekében.
-                  </p>
-                </div>
-
-                <div className="group bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-blue-100/50 border border-blue-50 transition-all hover:translate-y-[-12px] hover:border-blue-200">
-                  <div className="w-20 h-20 bg-gradient-to-br bg-[#53A8C7] text-white rounded-3xl flex items-center justify-center mb-8 text-3xl font-black shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform">
-                    3
-                  </div>
-                  <h3 className="text-2xl font-bold mb-5 text-slate-900">Bevezetés</h3>
-                  <p className="text-slate-600 leading-relaxed text-lg">
-                    Fokozatos, csapatbarát átállás. Az identiGO segítségével zökkenőmentessé tesszük a napi működést és felszabadítjuk a kollégák idejét.
-                  </p>
-                </div>
+            <div className="mt-10 max-w-4xl mx-auto rounded-3xl bg-slate-900 text-white p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+              <div>
+                <p className="text-[#9ad6ea] text-sm font-bold uppercase tracking-wide mb-2">Következő lépés</p>
+                <h3 className="text-2xl font-extrabold">Kérjen személyre szabott rendrakási tervet</h3>
               </div>
-
+              <button className="bg-[#53A8C7] hover:bg-[#3f98b8] border-none text-white font-bold px-8 py-3 rounded-xl transition-colors cursor-pointer">
+                Időpontot kérek
+              </button>
+            </div>
           </div>
         </section>
       </main>

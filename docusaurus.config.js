@@ -74,7 +74,20 @@ const config = {
     ],
   ],
 
-  plugins: [],
+  plugins: [
+    function akademiaDynamicRoutesPlugin() {
+      return {
+        name: 'akademia-dynamic-routes',
+        async contentLoaded({actions}) {
+          actions.addRoute({
+            path: '/akademia/esemenyek/:slug',
+            component: '@site/src/pages/akademia/esemenyek/[slug].js',
+            exact: true,
+          });
+        },
+      };
+    },
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -111,11 +124,13 @@ const config = {
                 label: 'Akadémia',
                 to: '/akademia',
                 className: 'mega-card-link',
+                activeBaseRegex: '^/akademia/?$',
               },
               {
                 label: 'Események',
                 to: '/akademia/esemenyek',
                 className: 'mega-card-link',
+                activeBaseRegex: '^/akademia/esemenyek(?:/.*)?$',
               },
             ],
           },

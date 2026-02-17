@@ -92,12 +92,12 @@ const EbookSlider = () => {
 export default function EbookPage() {
   return (
     <Layout title="E-book" description="Pénzmosás elleni törvény TUDÁSTÁR eBook">
-      <main className="bg-white min-h-screen py-12 md:py-20 overflow-hidden">
+      <main className="bg-white min-h-screen py-10 md:py-14 overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
             
             {/* Left Content Column */}
-            <div className="w-full lg:w-3/5 space-y-8">
+            <div className="w-full lg:w-3/5 space-y-6">
               {/* Category Label with Line */}
               <div className="flex items-center gap-3">
                 <div className="w-8 h-[2px] bg-[#53A8C7]"></div>
@@ -107,13 +107,13 @@ export default function EbookPage() {
               </div>
 
               {/* Main Title */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
                 Pénzmosás elleni törvény <br />
                 <span className="text-[#0a7ac3]">TUDÁSTÁR</span> eBook?
               </h1>
 
               {/* Description Texts */}
-              <div className="space-y-0 text-slate-600 text-lg md:text-md leading-relaxed max-w-2xl">
+              <div className="space-y-0 text-slate-600 text-base md:text-base leading-relaxed max-w-2xl">
                 <p>
                   Tapasztalataink szerint a Pénzmosási törvény (Pmt.) értelmezése és gyakorlati alkalmazása sokak számára kihívást jelent. Jelenleg <span className="font-bold text-slate-800">kevés az átfogó, hiteles és érthető oktatóanyag</span>, ezért sokan nem tudják, honnan érdemes tájékozódni a jogszabályi kötelezettségekről, egyáltalán hogyan kezdjenek neki a megfelelésnek.
                 </p>
@@ -123,7 +123,7 @@ export default function EbookPage() {
               </div>
 
               {/* Feature List with Checkmarks */}
-              <ul className="space-y-0">
+              <ul className="space-y-2">
                 {[
                   {
                     title: "Az összes teendő",
@@ -142,24 +142,24 @@ export default function EbookPage() {
                     desc: "A kapcsolódó listák elérhetősége: kiemelt kockázatú és offshore országok, szankciós listák, stb."
                   }
                 ].map((item, idx) => (
-                  <li key={idx} className="flex gap-4 items-start">
+                  <li key={idx} className="flex gap-3 items-start">
                     <div className="flex-shrink-0 w-6 h-6 mt-1 text-green-500">
                       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-slate-800 mb-1">{item.title}</h3>
-                      <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                      <h3 className="text-base md:text-lg font-bold text-slate-800 mb-1">{item.title}</h3>
+                      <p className="text-sm md:text-base text-slate-600 leading-relaxed">{item.desc}</p>
                     </div>
                   </li>
                 ))}
               </ul>
 
               {/* CTA Button */}
-              <div className="pt-4">
+              <div className="pt-2">
                 <button 
-                  className="w-full md:w-auto bg-[#53A8C7] hover:bg-[#0a7ac3] text-white font-bold px-12 py-5 rounded-2xl text-xl shadow-xl shadow-blue-100 transition-all hover:scale-105 active:scale-95 border-none cursor-pointer"
+                  className="w-full md:w-auto bg-[#53A8C7] hover:bg-[#0a7ac3] text-white font-bold px-10 py-4 rounded-2xl text-lg shadow-xl shadow-blue-100 transition-all hover:scale-105 active:scale-95 border-none cursor-pointer"
                 >
                   Kérem a könyvet
                 </button>
@@ -168,7 +168,7 @@ export default function EbookPage() {
 
             {/* Right Visual Column */}
             <div className="w-full lg:w-2/5 relative">
-              <div className="relative z-10 bg-gradient-to-br from-blue-50 to-white p-6 rounded-[3rem] shadow-2xl border border-blue-100 mb-12 lg:mb-0">
+              <div className="relative z-10 bg-gradient-to-br from-blue-50 to-white p-5 rounded-[2.5rem] shadow-2xl border border-blue-100 mb-12 lg:mb-0">
                 <EbookSlider />
 
                 {/* Decorative dots pattern (from screenshot) */}
