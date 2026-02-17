@@ -139,6 +139,12 @@ const config = {
             ],
           },
           {
+            to: '/arak',
+            label: 'Árak',
+            position: 'left',
+            activeBaseRegex: '^/arak',
+          },
+          {
             label: 'Közösség és tartalom',
             position: 'left',
             className: 'navbar-mega',

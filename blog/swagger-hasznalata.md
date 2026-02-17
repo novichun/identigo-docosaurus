@@ -65,7 +65,7 @@ Minden lekérdezésnél látható a konkrét URL a kiválasztott API végpont le
 ![|690x434](upload://db2A0K78vKyd0bbOvH4mgmCZP4J.jpeg)
 
 # 4. SoapUI, Postman, VSCode
-Ha SoapUI-al (vagy Postman, vagy VsCode) hozzá kell adni egy headert a kéréshez, akkor a header paraméter neve: *Authorization*, az értéke pedig: *Bearer* {token}
+Ha SoapUI-al (vagy Postman, vagy VsCode) hozzá kell adni egy headert a kéréshez, akkor a header paraméter neve: `Authorization`, az értéke pedig: `Bearer {token}`
 
 Felül adja meg a helyes végpontot és jobb oldalt meg is jelenik a válasz.
 ![|690x434](upload://kQkFrIsu7zSCY4MXPvjfXV0ZfQh.png)

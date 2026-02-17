@@ -96,40 +96,6 @@ export default function KozossegPage() {
             </div>
           </div>
         </section>
-
-        <section className="pb-20">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-[2px] bg-[#53A8C7]" />
-              <span className="text-sm font-bold tracking-widest uppercase text-[#53A8C7]">Munkatársak és csapat</span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {[
-                {
-                  title: 'Customer Success',
-                  text: 'Onboarding, folyamat-támogatás és best practice átadás.',
-                },
-                {
-                  title: 'Compliance szakértők',
-                  text: 'Szakmai validáció, ellenőrzési fókuszok és tudásanyagok.',
-                },
-                {
-                  title: 'Termékcsapat',
-                  text: 'Visszajelzés-alapú fejlesztés, egyszerűbb és gyorsabb workflow.',
-                },
-                {
-                  title: 'Support',
-                  text: 'Gyors operatív segítség és folyamatos kapcsolattartás.',
-                },
-              ].map((item) => (
-                <article key={item.title} className="bg-white rounded-2xl border border-slate-200 p-6 shadow-md shadow-slate-200/40">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
     </Layout>
   );
