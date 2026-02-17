@@ -34,6 +34,11 @@ export default function Home() {
       description="identiGO - Biztonságos és egyszerű identitáskezelés megoldások vállalkozásoknak.">
       <HomepageHeader />
       <main>
+        <section className="mx-auto max-w-5xl px-4 py-6">
+          <div className="rounded-xl border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-medium text-sky-900">
+            Tailwind CSS tesztblokk: utility class-ek aktívak.
+          </div>
+        </section>
         <HomepageFeatures />
       </main>
     </Layout>

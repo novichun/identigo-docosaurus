@@ -1,12 +1,13 @@
 ---
-slug: first-blog-post
-title: First Blog Post
-authors: [slorber, yangshun]
-tags: [hola, docusaurus]
+slug: megfelelesi-indulocsomag
+title: Megfelelési indulócsomag kis irodáknak
+authors: [judit]
+tags: [jog, digitalizacio]
 ---
 
-Lorem ipsum dolor sit amet...
+Az induláskor a legfontosabb, hogy legyen egy egyszerű, követhető megfelelési rendszered.
 
 <!-- truncate -->
 
-...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+Ebben a minta bejegyzésben az induló checklistek helye van kijelölve. Később ez cserélhető migrált
+identiGO cikkre.

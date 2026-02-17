@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --ifm-color-primary: #4794cf;
   --ifm-color-primary-dark: #4085ba;
@@ -8,6 +12,9 @@
   --ifm-color-primary-lightest: #a3caea;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --identigo-paper: #eef6fb;
+  --identigo-accent: #0f2b46;
+  --identigo-cta: #0a7ac3;
 }
 
 [data-theme='dark'] {
@@ -33,4 +40,191 @@
 
 .main-container {
   background-color: var(--ifm-background-color);
+}
+
+.marketing-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.marketing-page h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--identigo-accent);
+}
+
+.marketing-page .lead {
+  font-size: 1.1rem;
+  max-width: 68ch;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.feature-card {
+  background: var(--identigo-paper);
+  border: 1px solid rgba(71, 148, 207, 0.2);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.cta-panel {
+  margin-top: 2rem;
+  background: linear-gradient(140deg, #0f2b46 0%, #155c93 100%);
+  color: #fff;
+  border-radius: 18px;
+  padding: 1.25rem;
+}
+
+.cta-panel form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.cta-panel input {
+  flex: 1;
+  min-width: 220px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem;
+}
+
+.cta-panel button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  background: #fff;
+  color: var(--identigo-accent);
+  font-weight: 700;
+}
+
+@media (min-width: 997px) {
+  .navbar__item.dropdown.navbar-mega {
+    position: static;
+  }
+
+  .navbar__item.dropdown.navbar-mega .dropdown__menu {
+    min-width: 700px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 16px;
+    padding: 0.75rem;
+    background: #f4f9fd;
+    border: 1px solid rgba(15, 43, 70, 0.15);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .navbar__item.dropdown.navbar-mega .dropdown__link {
+    border: 1px solid rgba(71, 148, 207, 0.35);
+    border-radius: 12px;
+    background: #fff;
+    font-weight: 600;
+    padding: 0.85rem 0.9rem;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+  }
+
+  .navbar__item.dropdown.navbar-mega .dropdown__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(16, 70, 113, 0.13);
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 996px) {
+  .navbar-sidebar .menu__link {
+    font-weight: 600;
+  }
+}
+
+.blog-list-page main .container {
+  max-width: 1120px;
+}
+
+.blog-list-page article {
+  border: 1px solid rgba(71, 148, 207, 0.22);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+[data-theme='dark'] .blog-list-page article {
+  background: #1b2733;
+}
+
+.identigo-blog-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.identigo-blog-categories a {
+  padding: 0.45rem 0.75rem;
+  background: var(--identigo-paper);
+  border: 1px solid rgba(71, 148, 207, 0.25);
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--identigo-accent);
+}
+
+.identigo-blog-banner {
+  margin: 0 0 1.2rem;
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.identigo-blog-banner--jog {
+  background: linear-gradient(120deg, #14568b, #0f2b46);
+}
+
+.identigo-blog-banner--digitalizacio {
+  background: linear-gradient(120deg, #1a8f75, #116256);
+}
+
+.identigo-blog-banner--kozosseg {
+  background: linear-gradient(120deg, #b15b1f, #7f3f13);
+}
+
+/* Docs right-side TOC style (desktop) */
+.theme-doc-toc-desktop .table-of-contents {
+  border-left: 1px solid #d3d8df;
+  padding-left: 1.15rem;
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.theme-doc-toc-desktop .table-of-contents__link {
+  color: #4b5563;
+  font-weight: 400;
+  transition: color 0.16s ease;
+}
+
+.theme-doc-toc-desktop .table-of-contents__link:hover {
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.theme-doc-toc-desktop .table-of-contents__link--active {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.theme-doc-toc-desktop ul {
+  margin-top: 0.35rem;
+}
+
+.theme-doc-toc-desktop li {
+  margin: 0.2rem 0;
 }

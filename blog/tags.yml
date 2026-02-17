@@ -1,19 +1,14 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+jog:
+  label: Jog
+  permalink: /jog
+  description: Szabályozási és jogi témák
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+digitalizacio:
+  label: Digitalizáció
+  permalink: /digitalizacio
+  description: Automatizáció és hatékonyság
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+kozosseg:
+  label: Közösség
+  permalink: /kozosseg-tema
+  description: Közösségi és csapat fókuszú tartalmak

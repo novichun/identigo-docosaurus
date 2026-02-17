@@ -91,13 +91,62 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {to: '/', label: 'Főoldal', position: 'left'},
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            label: 'Termék',
             position: 'left',
-            label: 'Dokumentáció',
+            className: 'navbar-mega',
+            items: [
+              {
+                label: 'Hogyan rakok rendet',
+                to: '/rend',
+                className: 'mega-card-link',
+              },
+              {
+                label: 'E-book',
+                to: '/ebook',
+                className: 'mega-card-link',
+              },
+              {
+                label: 'Akadémia',
+                to: '/akademia',
+                className: 'mega-card-link',
+              },
+              {
+                label: 'Események',
+                to: '/akademia/esemenyek',
+                className: 'mega-card-link',
+              },
+            ],
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            label: 'Közösség és tartalom',
+            position: 'left',
+            className: 'navbar-mega',
+            items: [
+              {
+                label: 'Közösség',
+                to: '/kozosseg',
+                className: 'mega-card-link',
+              },
+              {
+                label: 'Blog',
+                to: '/blog',
+                className: 'mega-card-link',
+              },
+              /* {
+                label: 'Zsuzsa partner oldal',
+                to: '/zsuzsa',
+                className: 'mega-card-link',
+              }, */
+              {
+                type: 'docSidebar',
+                sidebarId: 'tutorialSidebar',
+                label: 'Dokumentáció',
+                className: 'mega-card-link',
+              },
+            ],
+          },
           {
             href: 'https://github.com/identigo/identigo-docosaurus',
             label: 'GitHub',
@@ -109,24 +158,32 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Dokumentáció',
+            title: 'Navigáció',
             items: [
               {
-                label: 'Bevezetés',
-                to: '/docs/tartalomjegyzek',
+                label: 'Közösség',
+                to: '/kozosseg',
+              },
+              {
+                label: 'Rend oldal',
+                to: '/rend',
+              },
+              {
+                label: 'E-book',
+                to: '/ebook',
               },
             ],
           },
           {
-            title: 'Közösség',
+            title: 'Akadémia',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/identigo',
+                label: 'Akadémia főoldal',
+                to: '/akademia',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/identigo',
+                label: 'Események',
+                to: '/akademia/esemenyek',
               },
             ],
           },
