@@ -104,11 +104,13 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/', label: 'Főoldal', position: 'left'},
+          {to: '/', label: 'Főoldal', position: 'left', activeBaseRegex: '^/$'},
           {
             label: 'Termék',
+            to: '/akademia',
             position: 'left',
             className: 'navbar-mega',
+            activeBaseRegex: '^/(rend|ebook|akademia(?:/.*)?)$',
             items: [
               {
                 label: 'Hogyan rakok rendet',
