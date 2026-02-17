@@ -15,7 +15,7 @@ export default function Navbar() {
     kozosseg: useBaseUrl('/kozosseg'),
     ebook: useBaseUrl('/ebook'),
     blog: useBaseUrl('/blog'),
-    docs: useBaseUrl('/docs'),
+    docs: useBaseUrl('/identigo-docosaurus/docs'),
     akademia: useBaseUrl('/akademia'),
     forum: 'https://forum.identigo.hu',
   };
@@ -38,7 +38,7 @@ export default function Navbar() {
           <div className="group relative flex flex-col rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-white/5">
             <a
               href={routes.forum}
-              className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+              className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-primary dark:text-white dark:hover:text-primary"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -62,7 +62,7 @@ export default function Navbar() {
           <div className="group relative flex flex-col rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-white/5">
             <a
               href={routes.kozosseg}
-              className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+              className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-primary dark:text-white dark:hover:text-primary"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -95,7 +95,7 @@ export default function Navbar() {
             <div className="group relative flex flex-col rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-white/5">
               <a
                 href={routes.docs}
-                className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+              className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-primary dark:text-white dark:hover:text-primary"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -103,7 +103,7 @@ export default function Navbar() {
                   stroke="currentColor"
                   strokeWidth="1.5"
                   aria-hidden="true"
-                  className="size-5 text-slate-500 dark:text-slate-300"
+                  className="size-5 text-primary dark:text-primary"
                 >
                   <path
                     d="M5.25 4.5h9a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9A2.25 2.25 0 0 1 3 17.25V6.75A2.25 2.25 0 0 1 5.25 4.5Zm9 0h4.5v12.75a2.25 2.25 0 0 1-2.25 2.25H14.25"
@@ -119,7 +119,7 @@ export default function Navbar() {
             <div className="group relative flex flex-col rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-white/5">
               <a
                 href={routes.ebook}
-                className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+              className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-primary dark:text-white dark:hover:text-primary"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -127,7 +127,7 @@ export default function Navbar() {
                   stroke="currentColor"
                   strokeWidth="1.5"
                   aria-hidden="true"
-                  className="size-5 text-slate-500 dark:text-slate-300"
+                  className="size-5 text-primary dark:text-primary"
                 >
                   <path
                     d="M12 6.75c-2.25-1.5-4.5-1.5-6.75 0v10.5c2.25-1.5 4.5-1.5 6.75 0m0-10.5c2.25-1.5 4.5-1.5 6.75 0v10.5c-2.25-1.5-4.5-1.5-6.75 0m0-10.5v10.5"
@@ -143,7 +143,7 @@ export default function Navbar() {
             <div className="group relative flex flex-col rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-white/5">
               <a
                 href={routes.kozosseg}
-                className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+              className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-primary dark:text-white dark:hover:text-primary"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -151,7 +151,7 @@ export default function Navbar() {
                   stroke="currentColor"
                   strokeWidth="1.5"
                   aria-hidden="true"
-                  className="size-5 text-slate-500 dark:text-slate-300"
+                  className="size-5 text-primary dark:text-primary"
                 >
                   <path
                     d="M17.25 18.75a3 3 0 0 0-3-3h-4.5a3 3 0 0 0-3 3M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
@@ -167,7 +167,7 @@ export default function Navbar() {
             <div className="group relative flex flex-col rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-white/5">
               <a
                 href={routes.blog}
-                className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+              className="relative flex items-center gap-2 font-semibold text-slate-900 hover:text-primary dark:text-white dark:hover:text-primary"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -175,7 +175,7 @@ export default function Navbar() {
                   stroke="currentColor"
                   strokeWidth="1.5"
                   aria-hidden="true"
-                  className="size-5 text-slate-500 dark:text-slate-300"
+                  className="size-5 text-primary dark:text-primary"
                 >
                   <path
                     d="M16.862 4.487 19.5 7.125m-1.638-2.638L7.5 14.85l-3 1 1-3L14.862 3.487a2.25 2.25 0 0 1 3 1Z"
@@ -199,7 +199,7 @@ export default function Navbar() {
                   stroke="currentColor"
                   strokeWidth="1.5"
                   aria-hidden="true"
-                  className="size-5 text-slate-500 dark:text-slate-300"
+                  className="size-5 text-primary dark:text-primary"
                 >
                   <path
                     d="M12 6 3.75 10.5 12 15l8.25-4.5L12 6Zm0 9v3.75M3.75 10.5v4.5L12 19.5l8.25-4.5v-4.5"
@@ -224,7 +224,7 @@ export default function Navbar() {
       <NavbarWithLogoActionsAndLeftAlignedLinks
         id="navbar"
         logo={
-          <NavbarLogo href="#">
+          <NavbarLogo href="/identigo-docosaurus/">
             <img
               src="https://identigo.hu/img/logo.png"
               alt="identiGO"
@@ -248,7 +248,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 popovertarget="desktop-menu-knowledge"
-                className="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 dark:text-white"
+                className="inline-flex items-center gap-x-1 text-sm/6 font-medium text-gray-900 dark:text-white"
               >
                 <span>Tudásbázis</span>
                 <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" className="size-5">
@@ -267,7 +267,9 @@ export default function Navbar() {
                 className="w-screen max-w-max overflow-visible bg-transparent px-4 transition transition-discrete [--anchor-gap:--spacing(5)] backdrop:bg-transparent open:flex data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
               >
                 <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-lg outline-1 outline-gray-900/5 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-                  {dropdownContent}
+                <div className="max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/40 scrollbar-track-transparent">
+                    {dropdownContent}
+                  </div>
                 </div>
               </ElPopover>
             </div>
