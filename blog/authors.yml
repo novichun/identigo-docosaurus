@@ -4,11 +4,46 @@ identigo-team:
   image_url: https://identigo.hu/favicon.ico
 
 judit:
-  name: Judit
+  name: Osváth Judit
+  title: AML szakértő
+  image_url: https://identigo.hu/favicon.ico
+
+Judit:
+  name: Osváth Judit
   title: AML szakértő
   image_url: https://identigo.hu/favicon.ico
 
 zsuzsa:
   name: Zsuzsa
   title: Partner mentor
+  image_url: https://identigo.hu/favicon.ico
+
+CrespoZs:
+  name: Crespo Zsuzsanna
+  title: Pmt. tanácsadó
+  image_url: https://identigo.hu/favicon.ico
+
+Feher.Regina:
+  name: Fehér Regina
+  title: Szerkesztő
+  image_url: https://identigo.hu/favicon.ico
+
+7451:
+  name: Szerkesztő
+  title: Szerkesztő
+  image_url: https://identigo.hu/favicon.ico
+
+buzag:
+  name: Buzády Gergely
+  title: Szerkesztő
+  image_url: https://identigo.hu/favicon.ico
+
+galusz.gabor:
+  name: Gálusz Gábor
+  title: Szerkesztő
+  image_url: https://identigo.hu/favicon.ico
+
+titkarsag:
+  name: Titkárság
+  title: Szerkesztőség
   image_url: https://identigo.hu/favicon.ico
