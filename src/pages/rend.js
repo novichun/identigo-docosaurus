@@ -1,7 +1,10 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function RendPage() {
+  const heroBg = useBaseUrl('/img/rendrakas.png');
+
   return (
     <Layout title="Hogyan rakok rendet" description="Az identiGO rendrakó folyamata">
       <main className="bg-slate-50 min-h-screen">
@@ -11,7 +14,7 @@ export default function RendPage() {
           <div 
             className="absolute inset-0 z-0 bg-cover bg-center"
             style={{ 
-              backgroundImage: "url('/img/rendrakas.png')",
+              backgroundImage: `url('${heroBg}')`,
               backgroundColor: '#0f2b46' // Fallback color
             }}
           >

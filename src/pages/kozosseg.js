@@ -1,7 +1,11 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function KozossegPage() {
+  const juditImage = useBaseUrl('/img/judit.jpeg');
+  const zsuzsaImage = useBaseUrl('/img/zsuzsa.jpg');
+
   return (
     <Layout title="Közösség" description="identiGO szakmai közösség és csapat">
       <main className="bg-slate-50 min-h-screen">
@@ -64,7 +68,7 @@ export default function KozossegPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <article className="bg-white border border-slate-200 rounded-[1.75rem] p-7 shadow-lg shadow-slate-200/50">
                 <img
-                  src="/img/judit.jpeg"
+                  src={juditImage}
                   alt="Judit"
                   className="w-full aspect-[4/3] object-cover rounded-2xl bg-slate-200 mb-6"
                 />
@@ -78,7 +82,7 @@ export default function KozossegPage() {
 
               <article className="bg-white border border-slate-200 rounded-[1.75rem] p-7 shadow-lg shadow-slate-200/50">
                 <img
-                    src="/img/zsuzsa.jpg"
+                  src={zsuzsaImage}
                   alt="Zsuzsa"
                   className="w-full aspect-[4/3] object-cover rounded-2xl bg-slate-200 mb-6"
                 />

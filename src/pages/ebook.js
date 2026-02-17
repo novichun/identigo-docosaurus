@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const EbookSlider = () => {
   const images = [
-    '/img/ebook/pmt-tudastar.png',
-    '/img/ebook/3oldal.png',
-    '/img/ebook/14oldal.png',
-    '/img/ebook/36oldal.png',
-    '/img/ebook/tartalomjegyzek_2.png',
-    '/img/ebook/tartalomjegyzek1.png',
+    useBaseUrl('/img/ebook/pmt-tudastar.png'),
+    useBaseUrl('/img/ebook/3oldal.png'),
+    useBaseUrl('/img/ebook/14oldal.png'),
+    useBaseUrl('/img/ebook/36oldal.png'),
+    useBaseUrl('/img/ebook/tartalomjegyzek_2.png'),
+    useBaseUrl('/img/ebook/tartalomjegyzek1.png'),
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
