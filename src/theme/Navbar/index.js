@@ -221,6 +221,51 @@ export default function Navbar() {
     </>
   );
 
+  const mobileLinks = (
+    <div className="space-y-6">
+      <div className="space-y-4">
+        <a href={useBaseUrl('/#funkciok')} className="block text-base/7 font-medium text-mist-950 dark:text-white">
+          Funkciók
+        </a>
+        <a href={useBaseUrl('/arak')} className="block text-base/7 font-medium text-mist-950 dark:text-white">
+          Árak
+        </a>
+
+        <details className="group">
+          <summary className="list-none inline-flex w-full cursor-pointer items-center justify-between gap-2 text-base/7 font-medium text-mist-950 dark:text-white [&::-webkit-details-marker]:hidden">
+            <span>Tudásbázis</span>
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              className="size-5 text-mist-950/60 transition group-open:rotate-180 dark:text-white/60"
+            >
+              <path
+                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                clipRule="evenodd"
+                fillRule="evenodd"
+              />
+            </svg>
+          </summary>
+          <div className="mt-4 overflow-hidden rounded-3xl border border-gray-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-gray-800/70">
+            <div className="max-h-[50vh] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/40 scrollbar-track-transparent">
+              {dropdownContent}
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        <PlainButtonLink href="#" size="lg" className="w-full justify-center">
+          Regisztráció
+        </PlainButtonLink>
+        <ButtonLink href="#" size="lg" className="w-full justify-center">
+          Bejelentkezés
+        </ButtonLink>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <NavbarWithLogoActionsAndLeftAlignedLinks
@@ -247,7 +292,8 @@ export default function Navbar() {
           <>
             <NavbarLink href={useBaseUrl('/#funkciok')}>Funkciók</NavbarLink>
             <NavbarLink href={useBaseUrl('/arak')}>Árak</NavbarLink>
-            <div className="relative">
+
+            <div className="relative max-lg:hidden">
               <button
                 popoverTarget="desktop-menu-knowledge"
                 className="inline-flex items-center gap-x-1 text-sm/6 font-medium text-gray-900 dark:text-white"
@@ -269,7 +315,7 @@ export default function Navbar() {
                 className="w-screen max-w-max overflow-visible bg-transparent px-4 transition transition-discrete [--anchor-gap:--spacing(5)] backdrop:bg-transparent open:flex data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
               >
                 <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-lg outline-1 outline-gray-900/5 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-                <div className="max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/40 scrollbar-track-transparent">
+                  <div className="max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/40 scrollbar-track-transparent">
                     {dropdownContent}
                   </div>
                 </div>
@@ -277,6 +323,7 @@ export default function Navbar() {
             </div>
           </>
         }
+        mobileLinks={mobileLinks}
         actions={
           <>
             <PlainButtonLink href="#" className="max-sm:hidden">

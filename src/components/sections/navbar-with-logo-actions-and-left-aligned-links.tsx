@@ -62,6 +62,7 @@ export function NavbarLogo({ className, href, ...props }: { href: string } & Omi
 
 export function NavbarWithLogoActionsAndLeftAlignedLinks({
   links,
+  mobileLinks,
   logo,
   actions,
   className,
@@ -69,6 +70,7 @@ export function NavbarWithLogoActionsAndLeftAlignedLinks({
 }: {
   logo: ReactNode
   links: ReactNode
+  mobileLinks?: ReactNode
   actions: ReactNode
 } & ComponentProps<'header'>) {
   return (
@@ -125,7 +127,7 @@ export function NavbarWithLogoActionsAndLeftAlignedLinks({
                   </svg>
                 </button>
               </div>
-              <div className="mt-6 flex flex-col gap-6">{links}</div>
+              <div className="mt-6 flex flex-col gap-6">{mobileLinks ?? links}</div>
             </ElDialogPanel>
           </dialog>
         </ElDialog>

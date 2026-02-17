@@ -1,36 +1,46 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import { getSortedEvents } from '../../data/akademiaEvents';
-
 import { ButtonLink, PlainButtonLink } from '../../components/elements/button';
 import { Container } from '../../components/elements/container';
 import { Eyebrow } from '../../components/elements/eyebrow';
 import { Heading } from '../../components/elements/heading';
 import { Main } from '../../components/elements/main';
+import { Section } from '../../components/elements/section';
 import { Subheading } from '../../components/elements/subheading';
 import { Text } from '../../components/elements/text';
 import { Wallpaper } from '../../components/elements/wallpaper';
-import { Section } from '../../components/elements/section';
-import { Feature, FeaturesThreeColumn } from '../../components/sections/features-three-column';
+
+function statusStyles(status) {
+  if (status === 'open') {
+    return 'bg-emerald-50 text-emerald-700 border-emerald-200';
+  }
+  if (status === 'few') {
+    return 'bg-amber-50 text-amber-700 border-amber-200';
+  }
+  if (status === 'soon') {
+    return 'bg-sky-50 text-sky-700 border-sky-200';
+  }
+  return 'bg-slate-100 text-slate-700 border-slate-200';
+}
 
 export default function AkademiaPage() {
   const events = getSortedEvents();
-  const highlightedEvent = events[0];
 
   return (
-    <Layout title="Akadémia" description="identiGO Akadémia főoldal">
+    <Layout title="Akadémia események" description="identiGO Akadémia eseménylista">
       <Main className="bg-white">
         <Wallpaper color="blue" className="text-white">
-          <section className="py-20 md:py-24">
+          <section className="py-16 md:py-20">
             <Container>
               <div className="max-w-4xl">
-                <Eyebrow className="text-white/70">identiGO Akadémia</Eyebrow>
+                <Eyebrow className="text-white/70">Események</Eyebrow>
                 <Heading color="light" className="mt-4">
-                  Gyakorlati képzések
+                  identiGO Akadémia eseménylista
                 </Heading>
                 <Text size="lg" color="light" className="mt-6 max-w-3xl">
-                  Workshopok, mini masterclass alkalmak és esettanulmány fókuszú események egy helyen. Minden esemény
-                  gyakorlati szemléletű, konkrét folyamatokkal és azonnal használható mintákkal.
+                  Válogatott workshopok és szakmai alkalmak megfelelési, jogi és operatív csapatoknak. Minden eseményhez
+                  külön részletoldal és jelentkezési blokk tartozik.
                 </Text>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <ButtonLink size="lg" color="light" href="/akademia/esemenyek">
@@ -46,65 +56,59 @@ export default function AkademiaPage() {
         </Wallpaper>
 
         <Section
-          headline="Kiemelt következő esemény"
-          subheadline={
-            <>
-              {highlightedEvent.summary}
-            </>
-          }
+          eyebrow="Akadémia"
+          headline="Aktuális események"
+          subheadline="Nyitott, hamarosan induló és korlátozott helyes események egy helyen."
           className="bg-mist-50"
         >
-          <div className="rounded-3xl bg-white p-8 md:p-10">
-            <Eyebrow className="text-[#53A8C7]">Kiemelt esemény</Eyebrow>
-            <Subheading className="mt-3 text-mist-950">{highlightedEvent.title}</Subheading>
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="rounded-2xl bg-mist-50 p-4">
-                <Text className="text-sm text-mist-500">Dátum</Text>
-                <p className="font-semibold text-mist-950">{highlightedEvent.dateLabel}</p>
-              </div>
-              <div className="rounded-2xl bg-mist-50 p-4">
-                <Text className="text-sm text-mist-500">Idő</Text>
-                <p className="font-semibold text-mist-950">{highlightedEvent.time}</p>
-              </div>
-              <div className="rounded-2xl bg-mist-50 p-4">
-                <Text className="text-sm text-mist-500">Helyszín</Text>
-                <p className="font-semibold text-mist-950">{highlightedEvent.location}</p>
-              </div>
-              <div className="rounded-2xl bg-mist-50 p-4">
-                <Text className="text-sm text-mist-500">Részvétel</Text>
-                <p className="font-semibold text-mist-950">{highlightedEvent.price}</p>
-              </div>
-            </div>
-            <div className="mt-8">
-              <ButtonLink href={`/akademia/esemenyek/${highlightedEvent.slug}`}> {highlightedEvent.ctaLabel} </ButtonLink>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {events.map((event) => (
+              <article
+                key={event.slug}
+                className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm shadow-slate-200/40 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50 md:p-8"
+              >
+                <div className="absolute inset-x-0 top-0 h-1 bg-[#53A8C7]" />
+
+                <div className="flex flex-wrap items-center gap-3 mb-5">
+                  <span
+                    className={`inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full border ${statusStyles(event.status)}`}
+                  >
+                    {event.statusLabel}
+                  </span>
+                  <span className="text-xs font-bold uppercase tracking-wide text-[#53A8C7]">{event.eyebrow}</span>
+                </div>
+
+                <Subheading className="text-mist-950">{event.title}</Subheading>
+                <Text className="mt-3 text-mist-600">{event.summary}</Text>
+
+                <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
+                  <div className="rounded-2xl border border-slate-100 bg-mist-50 p-3">
+                    <Text className="text-xs uppercase tracking-wide text-mist-500">Dátum</Text>
+                    <Text className="font-semibold text-mist-950">{event.dateLabel}</Text>
+                  </div>
+                  <div className="rounded-2xl border border-slate-100 bg-mist-50 p-3">
+                    <Text className="text-xs uppercase tracking-wide text-mist-500">Idő</Text>
+                    <Text className="font-semibold text-mist-950">{event.time}</Text>
+                  </div>
+                  <div className="rounded-2xl border border-slate-100 bg-mist-50 p-3">
+                    <Text className="text-xs uppercase tracking-wide text-mist-500">Helyszín</Text>
+                    <Text className="font-semibold text-mist-950">{event.location}</Text>
+                  </div>
+                  <div className="rounded-2xl border border-slate-100 bg-mist-50 p-3">
+                    <Text className="text-xs uppercase tracking-wide text-mist-500">Részvétel</Text>
+                    <Text className="font-semibold text-mist-950">{event.price}</Text>
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <ButtonLink href={`/akademia/esemenyek/${event.slug}`} className="w-full justify-center">
+                    Részletek és jelentkezés
+                  </ButtonLink>
+                </div>
+              </article>
+            ))}
           </div>
         </Section>
-
-        <FeaturesThreeColumn
-          headline="Miért hasznos az akadémia?"
-          subheadline={
-            <>
-              Rövid, fókuszált formátumok, amelyek valóban segítik a napi megfelelést.
-            </>
-          }
-          features={
-            <>
-              <Feature
-                headline="Workshopok"
-                subheadline={<p>Élő, interaktív alkalmak valós problémákra építve.</p>}
-              />
-              <Feature
-                headline="Sablonok és checklisták"
-                subheadline={<p>Azonnal használható minták, amik gyorsítják a napi munkát.</p>}
-              />
-              <Feature
-                headline="Kérdezz-felelek"
-                subheadline={<p>Nyílt Q&A szakasz minden eseményen, konkrét esetekkel.</p>}
-              />
-            </>
-          }
-        />
       </Main>
     </Layout>
   );

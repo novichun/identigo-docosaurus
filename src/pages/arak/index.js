@@ -271,12 +271,19 @@ export default function Pricing() {
               <label className="relative inline-flex cursor-pointer items-center">
                 <input
                   type="checkbox"
-                  className="peer sr-only"
+                  className="sr-only"
                   checked={ttlkEnabled}
                   onChange={(event) => setTtlkEnabled(event.target.checked)}
                 />
-                <div className="h-6 w-10 rounded-full bg-mist-950/20 transition peer-checked:bg-primary dark:bg-white/20">
-                  <div className="h-5 w-5 translate-x-0.5 translate-y-0.5 rounded-full bg-white transition peer-checked:translate-x-[1.25rem]" />
+                <div
+                  className={`h-6 w-10 rounded-full transition-colors duration-200 ${
+                    ttlkEnabled ? 'bg-primary' : 'bg-mist-950/20 dark:bg-white/20'
+                  }`}>
+                  <div
+                    className={`h-5 w-5 translate-y-0.5 rounded-full bg-white shadow-sm transition-transform duration-200 ${
+                      ttlkEnabled ? 'translate-x-[1.25rem]' : 'translate-x-0.5'
+                    }`}
+                  />
                 </div>
               </label>
             </div>
@@ -336,7 +343,7 @@ export default function Pricing() {
         />
 
         <div className="mx-auto mb-16 w-full max-w-3xl px-4">
-          <div className="rounded-xl border border-mist-950/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+          <div className="rounded-xl border border-mist-950/10 bg-white p-6 dark:border-white/10 dark:bg-white/5">
             <div className="mb-4 flex items-start justify-between text-sm text-mist-700 dark:text-mist-300">
               <span>
                 {currentType === 'BASIC' ? 'Alap' : 'Prémium'} csomag, {customerNum}{' '}
