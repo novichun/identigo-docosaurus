@@ -102,3 +102,16 @@
   gap: 1rem;
   margin: 1.5rem 0;
 }
+
+.identigo-navbar-placeholder.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5.25rem;
+  opacity: 0;
+  pointer-events: none;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}

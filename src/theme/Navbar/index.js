@@ -268,6 +268,7 @@ export default function Navbar() {
 
   return (
     <>
+      <div className="navbar identigo-navbar-placeholder" aria-hidden="true" />
       <NavbarWithLogoActionsAndLeftAlignedLinks
         id="navbar"
         logo={
@@ -292,6 +293,7 @@ export default function Navbar() {
           <>
             <NavbarLink href={useBaseUrl('/#funkciok')}>Funkciók</NavbarLink>
             <NavbarLink href={useBaseUrl('/arak')}>Árak</NavbarLink>
+            <NavbarLink href={useBaseUrl('/blog')}>Blog</NavbarLink>
 
             <div className="relative max-lg:hidden">
               <button
